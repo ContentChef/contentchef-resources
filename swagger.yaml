@@ -247,6 +247,11 @@ paths:
         in: "query"
         description: "Indicates the filters on indexed fields needed to be applied to published contents (it's a stringified json). Example: \"{\"condition\":\"AND\",\"items\":[{\"operator\":\"EQUALS\",\"field\":\"indexedField\",\"value\":\"indexedValue\"}]}\""
         type: "string"
+      - name: "sorting"
+        in: "query"
+        description: "Indicates how you would like to sort the contents (+publicId = ascending order by publicId)"
+        type: "string"
+        minLength: 1
       responses:
         200:
           description: "successful operation"
@@ -338,6 +343,11 @@ paths:
         in: "query"
         description: "Indicates the filters on indexed fields needed to be applied to published contents (it's a stringified json). Example: \"{\"condition\":\"AND\",\"items\":[{\"operator\":\"EQUALS\",\"field\":\"indexedField\",\"value\":\"indexedValue\"}]}\""
         type: "string"
+      - name: "sorting"
+        in: "query"
+        description: "Indicates how you would like to sort the contents (+publicId = ascending order by publicId)"
+        type: "string"
+        minLength: 1
       responses:
         200:
           description: "successful operation"
@@ -425,6 +435,11 @@ paths:
         in: "query"
         description: "Indicates the filters on indexed fields needed to be applied to published contents (it's a stringified json). Example: \"{\"condition\":\"AND\",\"items\":[{\"operator\":\"EQUALS\",\"field\":\"indexedField\",\"value\":\"indexedValue\"}]}\""
         type: "string"
+      - name: "sorting"
+        in: "query"
+        description: "Indicates how you would like to sort the contents (+publicId = ascending order by publicId)"
+        type: "string"
+        minLength: 1
       responses:
         200:
           description: "successful operation"
