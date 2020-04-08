@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "da74e391-27a4-456b-bb26-8c97f0609779",
+		"_postman_id": "e8eb3605-732d-4e28-be1d-15e3fa8dcb96",
 		"name": "ContentChef public API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -161,6 +161,12 @@
 											"value": "{{contentPublicId}}",
 											"description": "Content public ID",
 											"disabled": true
+										},
+										{
+											"key": "sorting",
+											"value": "{{sorting}}",
+											"description": "Sort contents by field (eg +publicId)",
+											"disabled": true
 										}
 									]
 								},
@@ -228,6 +234,12 @@
 											"key": "publicId",
 											"value": "{{contentPublicId}}",
 											"description": "Content public ID",
+											"disabled": true
+										},
+										{
+											"key": "sorting",
+											"value": "{{sorting}}",
+											"description": "Sort contents by field (eg +publicId)",
 											"disabled": true
 										}
 									]
