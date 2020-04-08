@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "da74e391-27a4-456b-bb26-8c97f0609779",
+		"name": "ContentChef public API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Content",
+			"item": [
+				{
+					"name": "Live",
+					"item": [
+						{
+							"name": "Content (Live)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/space/{{spaceId}}/online/content/{{channelMnemonicId}}?legacyMetadata=false&publicId={{contentPublicId}}&targetDate={{targetDate}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"space",
+										"{{spaceId}}",
+										"online",
+										"content",
+										"{{channelMnemonicId}}"
+									],
+									"query": [
+										{
+											"key": "legacyMetadata",
+											"value": "false",
+											"description": "Uses legacy metadata"
+										},
+										{
+											"key": "publicId",
+											"value": "{{contentPublicId}}",
+											"description": "Content's public Id"
+										},
+										{
+											"key": "targetDate",
+											"value": "{{targetDate}}",
+											"description": "Content's publishing date"
+										}
+									]
+								},
+								"description": "Searches for contents published in live staging"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Preview",
+					"item": [
+						{
+							"name": "Content (Preview)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/space/{{spaceId}}/preview/{{publishingState}}/content/{{channelMnemonicId}}?legacyMetadata=false&publicId={{contentPublicId}}&targetDate={{targetDate}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"space",
+										"{{spaceId}}",
+										"preview",
+										"{{publishingState}}",
+										"content",
+										"{{channelMnemonicId}}"
+									],
+									"query": [
+										{
+											"key": "legacyMetadata",
+											"value": "false",
+											"description": "Uses legacy metadata"
+										},
+										{
+											"key": "publicId",
+											"value": "{{contentPublicId}}",
+											"description": "Content's public Id"
+										},
+										{
+											"key": "targetDate",
+											"value": "{{targetDate}}",
+											"description": "Content's publishing date"
+										}
+									]
+								},
+								"description": "Searches for contents"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "Live",
+					"item": [
+						{
+							"name": "Search (Live)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/space/{{spaceId}}/online/search/v2/{{channelMnemonicId}}?contentDefinition={{contentDefinitionName}}&skip={{skip}}&take={{take}}&propFilters={\"condition\":\"AND\",\"items\":[{\"field\":\"indexedField1\",\"operator\":\"CONTAINS\",\"value\":\"indexedValue1\"}]}&targetDate={{targetDate}}&tags={{tags}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"space",
+										"{{spaceId}}",
+										"online",
+										"search",
+										"v2",
+										"{{channelMnemonicId}}"
+									],
+									"query": [
+										{
+											"key": "contentDefinition",
+											"value": "{{contentDefinitionName}}",
+											"description": "Content Definition id"
+										},
+										{
+											"key": "skip",
+											"value": "{{skip}}",
+											"description": "Pagination offset"
+										},
+										{
+											"key": "take",
+											"value": "{{take}}",
+											"description": "Items to take for each page"
+										},
+										{
+											"key": "propFilters",
+											"value": "{\"condition\":\"AND\",\"items\":[{\"field\":\"indexedField1\",\"operator\":\"CONTAINS\",\"value\":\"indexedValue1\"}]}",
+											"description": "Additional filters, refer to README for more details"
+										},
+										{
+											"key": "targetDate",
+											"value": "{{targetDate}}",
+											"description": "Filter contents by publish date"
+										},
+										{
+											"key": "tags",
+											"value": "{{tags}}",
+											"description": "Content tags"
+										},
+										{
+											"key": "publicId",
+											"value": "{{contentPublicId}}",
+											"description": "Content public ID",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Searches for contents published in live staging"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Preview",
+					"item": [
+						{
+							"name": "Search (Preview)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/space/{{spaceId}}/preview/{{publishingState}}/search/v2/{{channelMnemonicId}}?contentDefinition={{contentDefinitionName}}&skip={{skip}}&take={{take}}&propFilters={\"condition\":\"AND\",\"items\":[{\"field\":\"indexedField1\",\"operator\":\"CONTAINS\",\"value\":\"indexedValue1\"}]}&targetDate={{targetDate}}&tags={{tags}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"space",
+										"{{spaceId}}",
+										"preview",
+										"{{publishingState}}",
+										"search",
+										"v2",
+										"{{channelMnemonicId}}"
+									],
+									"query": [
+										{
+											"key": "contentDefinition",
+											"value": "{{contentDefinitionName}}",
+											"description": "Content Definition id"
+										},
+										{
+											"key": "skip",
+											"value": "{{skip}}",
+											"description": "Pagination offset"
+										},
+										{
+											"key": "take",
+											"value": "{{take}}",
+											"description": "Items to take for each page"
+										},
+										{
+											"key": "propFilters",
+											"value": "{\"condition\":\"AND\",\"items\":[{\"field\":\"indexedField1\",\"operator\":\"CONTAINS\",\"value\":\"indexedValue1\"}]}",
+											"description": "Additional filters, refer to README for more details"
+										},
+										{
+											"key": "targetDate",
+											"value": "{{targetDate}}",
+											"description": "Filter contents by publish date"
+										},
+										{
+											"key": "tags",
+											"value": "{{tags}}",
+											"description": "Content tags"
+										},
+										{
+											"key": "publicId",
+											"value": "{{contentPublicId}}",
+											"description": "Content public ID",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Searches for contents"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	]
+}
