@@ -1,6 +1,6 @@
 swagger: "2.0"
 info:
-  description: "These are all the api calls to find all the published content in stage and live environment. This API doesn't require any particular authentication."
+  description: "The following endpoints are used to query ContentChef for a specific content or a collection of them. It's required to be in possession of one of the provided Api keys."
   version: "1.0.0"
   title: "Content Chef Delivery API"
   contact:
