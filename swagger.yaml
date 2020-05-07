@@ -37,6 +37,7 @@ paths:
         required: true
         description: "The spaceId where the content is published"
         type: "string"
+        default: "chefsite-2910"
       - name: "publicId"
         in: "query"
         required: true
@@ -91,6 +92,7 @@ paths:
         required: true
         description: "The spaceId where the content is published"
         type: "string"
+        default: "chefsite-2910"
       - name: "publicId"
         in: "query"
         required: true
@@ -145,6 +147,7 @@ paths:
         required: true
         description: "The spaceId where the content is published"
         type: "string"
+        default: "chefsite-2910"
       - name: "publicId"
         in: "query"
         required: true
@@ -195,6 +198,7 @@ paths:
         required: true
         description: "The spaceId where the content is published"
         type: "string"
+        default: "chefsite-2910"
       - name: "contentDefinition"
         in: "query"
         description: "Use to retrieve a content of a specific contentDefinition (mnemonicId)"
@@ -291,6 +295,7 @@ paths:
         required: true
         description: "The spaceId where the content is published"
         type: "string"
+        default: "chefsite-2910"
       - name: "contentDefinition"
         in: "query"
         description: "Use to retrieve a content of a specific contentDefinition (mnemonicId)"
@@ -387,6 +392,7 @@ paths:
         required: true
         description: "The spaceId where the content is published"
         type: "string"
+        default: "chefsite-2910"
       - name: "contentDefinition"
         in: "query"
         description: "Use to retrieve a content of a specific contentDefinition (mnemonicId)"
