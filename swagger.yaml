@@ -44,6 +44,7 @@ paths:
         description: "PublicId of the desired content"
         type: "string"
         minLength: 1
+        default: content-chef-site
       - name: "targetDate"
         in: "query"
         description: "Use to retrieve a content in a desired date (iso date format)"
@@ -99,6 +100,7 @@ paths:
         description: "PublicId of the requested content"
         type: "string"
         minLength: 1
+        default: content-chef-site
       - name: "targetDate"
         in: "query"
         description: "Use to retrieve a content in a desired date (iso date format)"
@@ -154,6 +156,7 @@ paths:
         description: "PublicId of the requested content"
         type: "string"
         minLength: 1
+        default: content-chef-site
       - name: "legacyMetaData"
         in: "query"
         description: "Use to retrieve data in the legacy format"
