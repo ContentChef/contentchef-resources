@@ -7,6 +7,8 @@ info:
     email: "support@contentchef.io"
 host: "api.contentchef.io"
 basePath: "/"
+schemes:
+ - https
 tags:
 - name: "stage"
   description: "Api for stage environment"
