@@ -19,12 +19,18 @@ paths:
     get:
       tags:
       - "stage"
-      summary: "Get a single published content in the staging enviroment"
+      summary: "Get a single published content in the staging environment"
       description: "Get a published content with the ability to preview the content on a specified targetDate"
       operationId: "httpGetPreviewStagePublishedContent"
       produces: 
        - "application/json"
       parameters:
+      - in: header
+        name: X-Chef-Key
+        schema:
+          type: string
+        default: BGUKY0QLY4XY-MFPYMT9-P
+        required: true
       - name: "publishingChannel"
         in: "path"
         required: true
@@ -75,12 +81,18 @@ paths:
     get:
       tags:
       - "live"
-      summary: "Get a published content in a live enviroment"
-      description: "Get a published content in a live enviroment with the ability to preview the desired content on a specified date"
+      summary: "Get a published content in a live environment"
+      description: "Get a published content in a live environment with the ability to preview the desired content on a specified date"
       operationId: "httpGetPreviewLivePublishedContent"
       produces: 
        - "application/json"
       parameters:
+      - in: header
+        name: X-Chef-Key
+        schema:
+          type: string
+        default: BGUKY0QLY4XY-MFPYMT9-P
+        required: true
       - name: "publishingChannel"
         in: "path"
         required: true
@@ -131,12 +143,18 @@ paths:
     get:
       tags:
       - "live"
-      summary: "Get the currently available published content in a live enviroment"
-      description: "Get a published content in a live enviroment ignoring targetDate and returning the current available content"
+      summary: "Get the currently available published content in a live environment"
+      description: "Get a published content in a live environment ignoring targetDate and returning the current available content"
       operationId: "httpGetOnlinePublishedContent"
       produces: 
        - "application/json"
       parameters:
+      - in: header
+        name: X-Chef-Key
+        schema:
+          type: string
+        default: H23GLO0G20DVUW73AXLW-O
+        required: true
       - name: "publishingChannel"
         in: "path"
         required: true
@@ -183,12 +201,18 @@ paths:
     get:
       tags:
       - "live"
-      summary: "Search published contents in the live enviroment"
-      description: "Searches contents in the live enviroment and returns a paginated response (can be used to preview contents in the future)"
+      summary: "Search published contents in the live environment"
+      description: "Searches contents in the live environment and returns a paginated response (can be used to preview contents in the future)"
       operationId: "paginatedLivePreviewHttpSearchContent"
       produces: 
         - "application/json"
-      parameters: 
+      parameters:
+      - in: header
+        name: X-Chef-Key
+        schema:
+          type: string
+        default: BGUKY0QLY4XY-MFPYMT9-P
+        required: true
       - name: "publishingChannel"
         in: "path"
         required: true
@@ -244,14 +268,12 @@ paths:
         description: "Indicates the number of contents to skip for pagination purposes"
         type: "number"
         minimum: 0
-        required: true
       - name: "take"
         in: "query"
         description: "Indicates the number of contents to take for pagination purposes"
         type: "number"
         minimum: 1
         maximum: 200
-        required: true
       - name: "propFilters"
         in: "query"
         description: "Indicates the filters on indexed fields needed to be applied to published contents (it's a stringified json). Example: \"{\"condition\":\"AND\",\"items\":[{\"operator\":\"EQUALS\",\"field\":\"indexedField\",\"value\":\"indexedValue\"}]}\""
@@ -280,12 +302,18 @@ paths:
     get:
       tags:
       - "stage"
-      summary: "Search published contents in the staging enviroment"
-      description: "Searches contents in the staging enviroment and returns a paginated response (can be used to preview contents in the future)"
+      summary: "Search published contents in the staging environment"
+      description: "Searches contents in the staging environment and returns a paginated response (can be used to preview contents in the future)"
       operationId: "paginatedStagePreviewHttpSearchContent"
       produces: 
         - "application/json"
-      parameters: 
+      parameters:
+      - in: header
+        name: X-Chef-Key
+        schema:
+          type: string
+        default: BGUKY0QLY4XY-MFPYMT9-P
+        required: true
       - name: "publishingChannel"
         in: "path"
         required: true
@@ -341,14 +369,12 @@ paths:
         description: "Indicates the number of contents to skip for pagination purposes"
         type: "number"
         minimum: 0
-        required: true
       - name: "take"
         in: "query"
         description: "Indicates the number of contents to take for pagination purposes"
         type: "number"
         minimum: 1
         maximum: 200
-        required: true
       - name: "propFilters"
         in: "query"
         description: "Indicates the filters on indexed fields needed to be applied to published contents (it's a stringified json). Example: \"{\"condition\":\"AND\",\"items\":[{\"operator\":\"EQUALS\",\"field\":\"indexedField\",\"value\":\"indexedValue\"}]}\""
@@ -377,12 +403,18 @@ paths:
     get:
       tags:
       - "live"
-      summary: "Search the currently published contents in the live enviroment"
-      description: "Searches contents in the live enviroment and returns a paginated response (cannot be used to preview content using a different `targetDate`)"
+      summary: "Search the currently published contents in the live environment"
+      description: "Searches contents in the live environment and returns a paginated response (cannot be used to preview content using a different `targetDate`)"
       operationId: "paginatedOnlineHttpSearchContent"
       produces: 
         - "application/json"
-      parameters: 
+      parameters:
+      - in: header
+        name: X-Chef-Key
+        schema:
+          type: string
+        default: H23GLO0G20DVUW73AXLW-O
+        required: true
       - name: "publishingChannel"
         in: "path"
         required: true
@@ -434,14 +466,12 @@ paths:
         description: "Indicates the number of contents to skip for pagination purposes"
         type: "number"
         minimum: 0
-        required: true
       - name: "take"
         in: "query"
         description: "Indicates the number of contents to take for pagination purposes"
         type: "number"
         minimum: 1
         maximum: 200
-        required: true
       - name: "propFilters"
         in: "query"
         description: "Indicates the filters on indexed fields needed to be applied to published contents (it's a stringified json). Example: \"{\"condition\":\"AND\",\"items\":[{\"operator\":\"EQUALS\",\"field\":\"indexedField\",\"value\":\"indexedValue\"}]}\""
