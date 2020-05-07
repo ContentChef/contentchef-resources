@@ -31,7 +31,7 @@ paths:
         description: "The channel where the content is published"
         type: "string"
         minLength: 1
-        maxLength: 4
+        default: example-ch
       - name: "spaceId"
         in: "path"
         required: true
@@ -85,7 +85,7 @@ paths:
         description: "The channel where the content is published"
         type: "string"
         minLength: 1
-        maxLength: 4
+        default: example-ch
       - name: "spaceId"
         in: "path"
         required: true
@@ -139,7 +139,7 @@ paths:
         description: "The channel where the content is published"
         type: "string"
         minLength: 1
-        maxLength: 4
+        default: example-ch
       - name: "spaceId"
         in: "path"
         required: true
@@ -189,7 +189,7 @@ paths:
         description: "The channel where the content is published"
         type: "string"
         minLength: 1
-        maxLength: 4
+        default: example-ch
       - name: "spaceId"
         in: "path"
         required: true
@@ -285,7 +285,7 @@ paths:
         description: "The channel where the content is published"
         type: "string"
         minLength: 1
-        maxLength: 4
+        default: example-ch
       - name: "spaceId"
         in: "path"
         required: true
@@ -381,7 +381,7 @@ paths:
         description: "The channel where the content is published"
         type: "string"
         minLength: 1
-        maxLength: 4
+        default: example-ch
       - name: "spaceId"
         in: "path"
         required: true
