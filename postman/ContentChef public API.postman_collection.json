@@ -62,7 +62,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/space/{{spaceId}}/preview/{{publishingState}}/content/{{channelMnemonicId}}?legacyMetadata=false&publicId={{contentPublicId}}&targetDate={{targetDate}}",
+									"raw": "{{baseUrl}}/space/{{spaceId}}/preview/{{publishingState}}/content/{{channelMnemonicId}}?legacyMetadata=false&publicId={{contentPublicId}}",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -88,7 +88,8 @@
 										{
 											"key": "targetDate",
 											"value": "{{targetDate}}",
-											"description": "Content's publishing date"
+											"description": "Content's publishing date",
+											"disabled": true
 										}
 									]
 								},
@@ -113,7 +114,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/space/{{spaceId}}/online/search/v2/{{channelMnemonicId}}?contentDefinition={{contentDefinitionName}}&skip={{skip}}&take={{take}}&propFilters={\"condition\":\"AND\",\"items\":[{\"field\":\"indexedField1\",\"operator\":\"CONTAINS\",\"value\":\"indexedValue1\"}]}&targetDate={{targetDate}}&tags={{tags}}",
+									"raw": "{{baseUrl}}/space/{{spaceId}}/online/search/v2/{{channelMnemonicId}}?skip={{skip}}&take={{take}}",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -129,32 +130,26 @@
 										{
 											"key": "contentDefinition",
 											"value": "{{contentDefinitionName}}",
-											"description": "Content Definition id"
-										},
-										{
-											"key": "skip",
-											"value": "{{skip}}",
-											"description": "Pagination offset"
-										},
-										{
-											"key": "take",
-											"value": "{{take}}",
-											"description": "Items to take for each page"
+											"description": "Content Definition id",
+											"disabled": true
 										},
 										{
 											"key": "propFilters",
 											"value": "{\"condition\":\"AND\",\"items\":[{\"field\":\"indexedField1\",\"operator\":\"CONTAINS\",\"value\":\"indexedValue1\"}]}",
-											"description": "Additional filters, refer to README for more details"
+											"description": "Additional filters, refer to README for more details",
+											"disabled": true
 										},
 										{
 											"key": "targetDate",
 											"value": "{{targetDate}}",
-											"description": "Filter contents by publish date"
+											"description": "Filter contents by publish date",
+											"disabled": true
 										},
 										{
 											"key": "tags",
 											"value": "{{tags}}",
-											"description": "Content tags"
+											"description": "Content tags",
+											"disabled": true
 										},
 										{
 											"key": "publicId",
@@ -167,6 +162,14 @@
 											"value": "{{sorting}}",
 											"description": "Sort contents by field (eg +publicId)",
 											"disabled": true
+										},
+										{
+											"key": "skip",
+											"value": "{{skip}}"
+										},
+										{
+											"key": "take",
+											"value": "{{take}}"
 										}
 									]
 								},
@@ -186,7 +189,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/space/{{spaceId}}/preview/{{publishingState}}/search/v2/{{channelMnemonicId}}?contentDefinition={{contentDefinitionName}}&skip={{skip}}&take={{take}}&propFilters={\"condition\":\"AND\",\"items\":[{\"field\":\"indexedField1\",\"operator\":\"CONTAINS\",\"value\":\"indexedValue1\"}]}&targetDate={{targetDate}}&tags={{tags}}",
+									"raw": "{{baseUrl}}/space/{{spaceId}}/preview/{{publishingState}}/search/v2/{{channelMnemonicId}}?skip={{skip}}&take={{take}}",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -203,7 +206,8 @@
 										{
 											"key": "contentDefinition",
 											"value": "{{contentDefinitionName}}",
-											"description": "Content Definition id"
+											"description": "Content Definition id",
+											"disabled": true
 										},
 										{
 											"key": "skip",
@@ -218,17 +222,20 @@
 										{
 											"key": "propFilters",
 											"value": "{\"condition\":\"AND\",\"items\":[{\"field\":\"indexedField1\",\"operator\":\"CONTAINS\",\"value\":\"indexedValue1\"}]}",
-											"description": "Additional filters, refer to README for more details"
+											"description": "Additional filters, refer to README for more details",
+											"disabled": true
 										},
 										{
 											"key": "targetDate",
 											"value": "{{targetDate}}",
-											"description": "Filter contents by publish date"
+											"description": "Filter contents by publish date",
+											"disabled": true
 										},
 										{
 											"key": "tags",
 											"value": "{{tags}}",
-											"description": "Content tags"
+											"description": "Content tags",
+											"disabled": true
 										},
 										{
 											"key": "publicId",
@@ -252,6 +259,28 @@
 					"_postman_isSubFolder": true
 				}
 			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "f2128c66-8db4-4b22-93f4-41e8ba6bd527",
+				"type": "text/javascript",
+				"exec": [
+					"pm.request.headers.add({key: 'X-Chef-Key', value: pm.environment.get(\"apiKey\")});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "07ab6c57-9588-4243-8dda-c4c48e068c3f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
