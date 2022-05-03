@@ -7,6 +7,8 @@ info:
     email: "support@contentchef.io"
 host: "api.contentchef.io"
 basePath: "/"
+schemes: 
+- "https"
 tags:
 - name: "stage"
   description: "Api for stage environment"
@@ -23,6 +25,11 @@ paths:
       produces: 
        - "application/json"
       parameters:
+      - name: "X-Chef-Key"
+        in: "header"
+        required: true
+        description: "The api key of the space"
+        type: "string"
       - name: "publishingChannel"
         in: "path"
         required: true
@@ -77,6 +84,11 @@ paths:
       produces: 
        - "application/json"
       parameters:
+      - name: "X-Chef-Key"
+        in: "header"
+        required: true
+        description: "The api key of the space"
+        type: "string"      
       - name: "publishingChannel"
         in: "path"
         required: true
@@ -131,6 +143,11 @@ paths:
       produces: 
        - "application/json"
       parameters:
+      - name: "X-Chef-Key"
+        in: "header"
+        required: true
+        description: "The api key of the space"
+        type: "string"      
       - name: "publishingChannel"
         in: "path"
         required: true
@@ -181,6 +198,11 @@ paths:
       produces: 
         - "application/json"
       parameters: 
+      - name: "X-Chef-Key"
+        in: "header"
+        required: true
+        description: "The api key of the space"
+        type: "string"      
       - name: "publishingChannel"
         in: "path"
         required: true
@@ -277,6 +299,11 @@ paths:
       produces: 
         - "application/json"
       parameters: 
+      - name: "X-Chef-Key"
+        in: "header"
+        required: true
+        description: "The api key of the space"
+        type: "string"      
       - name: "publishingChannel"
         in: "path"
         required: true
@@ -373,6 +400,11 @@ paths:
       produces: 
         - "application/json"
       parameters: 
+      - name: "X-Chef-Key"
+        in: "header"
+        required: true
+        description: "The api key of the space"
+        type: "string"      
       - name: "publishingChannel"
         in: "path"
         required: true
